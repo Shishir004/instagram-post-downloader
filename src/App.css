@@ -1,0 +1,151 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* App Container */
+.App {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffffdd;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+  text-align: center;
+}
+
+/* Title */
+h2 {
+  color: #6a1b9a;
+  margin-bottom: 1rem;
+}
+
+/* Input Field */
+input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f3e5f5;
+  color: #4a148c;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ab47bc;
+  background: #ede7f6;
+}
+
+/* Button */
+button {
+  margin-top: 1rem;
+  padding: 12px 28px;
+  font-size: 1rem;
+  background: #8e24aa;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(142, 36, 170, 0.4);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #6a1b9a;
+  transform: scale(1.03);
+}
+
+button:disabled {
+  background: #b39ddb;
+  cursor: not-allowed;
+}
+
+/* Error Text */
+p {
+  margin-top: 1rem;
+  color: crimson;
+  font-weight: bold;
+}
+
+/* Media Display */
+.media-container {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Media Card */
+.media-item {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.media-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Images & Videos */
+img, video {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+
+/* Download Link */
+a {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: white;
+  background-color: #7b1fa2;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  background-color: #4a0072;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
