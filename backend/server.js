@@ -4,9 +4,15 @@ const cors = require("cors");
 const { instagramGetUrl } = require("instagram-url-direct");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://your-frontend-domain.com"], // Update this with the frontend URL
+  methods: ["POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
-const PORT = process.env.PORT ||5000;
+
+const PORT = process.env.PORT || 5000;
+
 app.post("/api/download", async (req, res) => {
   const { url } = req.body;
 
@@ -19,11 +25,11 @@ app.post("/api/download", async (req, res) => {
       res.status(400).json({ success: false, message: "No media found" });
     }
   } catch (error) {
-    res
-      .status(500)
-      .json({ success: false, message: "Invalid or unsupported Instagram URL" });
+    console.error("Error:", error);
+    res.status(500).json({ success: false, message: "Invalid or unsupported Instagram URL" });
   }
 });
+
 app.listen(PORT, () => {
-  console.log(`✅ Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
